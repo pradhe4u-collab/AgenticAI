@@ -26,7 +26,7 @@ load_dotenv(find_dotenv(usecwd=True))
 # Groq (free tier) with LangGraph. openai/gpt-oss-120b is Groq's flagship
 # tool-use model. Override via GROQ_MODEL (e.g. "openai/gpt-oss-20b" for speed).
 # Needs GROQ_API_KEY in the environment — get a free key at https://console.groq.com/keys
-MODEL = os.getenv("GROQ_MODEL", "openai/gpt-oss-120b")
+MODEL = os.getenv("GROQ_API_KEY", "openai/gpt-oss-120b")
 
 # NOTE: describe the tools in plain prose, NOT as `name(args)` — showing
 # function-call syntax makes some models imitate it as text and break tool-calling.
@@ -42,6 +42,7 @@ Then reason about form, role balance, the pitch bias and match-ups before decidi
 
 TEAM RULES:
 - Exactly 11 players.
+- Pick players from the pool of players provided to you in their respective teams.
 - Valid composition: 1-4 wicket-keepers (WK), 3-6 batters (BAT),
   1-4 all-rounders (AR), 3-6 bowlers (BOWL).
 - Total credits must not exceed 100.
